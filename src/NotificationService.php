@@ -6,7 +6,8 @@ use Aws\Sns\SnsClient;
 class NotificationService
 {
 
-    const DATA_TYPE_JSON = 'json';
+    const DATA_TYPE_ARRAY = 'array';
+    const DATA_TYPE_STRING = 'string';
 
     protected $client;
 
@@ -45,7 +46,7 @@ class NotificationService
      * @param string $data_type
      * @return SnsClient
      */
-    public function publish($message,$data_type = 'json'){
+    public function publish($message,$data_type = self::DATA_TYPE_ARRAY){
 
         $msg = $this->convertMessage($message,$data_type);
 
@@ -66,9 +67,10 @@ class NotificationService
     private function convertMessage($message,$data_type){
 
         switch ($data_type){
-            case self::DATA_TYPE_JSON:
+            case self::DATA_TYPE_ARRAY:
                 $result = \GuzzleHttp\json_encode($message);
                 break;
+            case self::DATA_TYPE_STRING:
             default:
                 $result = $message;
         }

@@ -1,7 +1,7 @@
 {
     "name": "ibookingbr/aws-notification-service",
     "type": "library",
-    "version": "0.1",
+    "version": "v0.2",
     "description": "AWS SNS Library",
     "license": "Apache-2.0",
     "authors": [
