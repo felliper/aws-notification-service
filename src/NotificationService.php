@@ -48,7 +48,7 @@ class NotificationService
      */
     public function publish($message,$data_type = self::DATA_TYPE_ARRAY){
 
-        $msg = $this->convertMessage($message,$data_type);
+        $msg = $this->convertMessageToString($message,$data_type);
 
         $this->client->publish(
             [
@@ -64,14 +64,14 @@ class NotificationService
      * @param $data_type
      * @return string
      */
-    private function convertMessage($message,$data_type){
+    private function convertMessageToString($message, $data_type){
+        $result = null;
 
         switch ($data_type){
             case self::DATA_TYPE_ARRAY:
                 $result = \GuzzleHttp\json_encode($message);
                 break;
             case self::DATA_TYPE_STRING:
-            default:
                 $result = $message;
         }
 
