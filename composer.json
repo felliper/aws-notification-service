@@ -1,7 +1,7 @@
 {
-    "name": "ibookingbr/aws-notification-service",
+    "name": "felliper/aws-notification-service",
     "type": "library",
-    "version": "0.2",
+    "version": "0.3",
     "description": "AWS SNS Library",
     "license": "Apache-2.0",
     "authors": [
