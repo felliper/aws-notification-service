@@ -1,5 +1,5 @@
 <?php
-namespace IbookingBR\AWSNotificationService\Messages;
+namespace Felliper\AWSNotificationService\Messages;
 
 
 abstract class Attribute

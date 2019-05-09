@@ -1,5 +1,5 @@
 <?php
-namespace IbookingBR\AWSNotificationService\Messages;
+namespace Felliper\AWSNotificationService\Messages;
 
 
 class JsonAttribute extends Attribute
